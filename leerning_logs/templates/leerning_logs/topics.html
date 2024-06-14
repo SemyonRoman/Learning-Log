@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Topics</title>
+</head>
+<body>
+  {% extends "leerning_logs/base.html" %}
+
+  {% block page_header %}
+  <h1>Темы</h1>
+  {% endblock page_header %}
+
+  {% block content %}
+
+  <ul>
+      {% for topic in topics %}
+        <li><h3>
+            <a href="{% url 'leerning_logs:topic' topic.id %}">{{ topic }}</a>
+        </h3></li>
+      {% empty %}
+        <li><h3>
+            Пока не было добавлено ни одной темы.
+        </h3></li>
+      {% endfor %}
+  </ul>
+
+  <h3><a href = "{% url 'leerning_logs:new_topic' %}"> Добавьте новую тему:</a></h3>
+
+  {% endblock content %}
+</body>
+</html>

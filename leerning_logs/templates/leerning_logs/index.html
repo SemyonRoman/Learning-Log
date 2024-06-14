@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Learning Log</title>
+</head>
+<body>
+  {% extends "leerning_logs/base.html" %}
+  {% block page_header %}
+
+    <div class="jumbotron">
+        <h1 class="display-3">Learning log</h1>
+
+        <p class="lead">Добавляйте интересующие Вас темы к себе на страницу и пишите записи к ним.</p>
+
+        <a class="btn btn-lg btn-primary" href="{% url 'users:register' %}"
+           role="button">Зарегистрироваться &raquo;</a>
+    </div>
+    {% endblock page_header %}
+</body>
+</html>
